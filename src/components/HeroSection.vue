@@ -158,7 +158,7 @@ const enterForest = () => {
 	max-width: 95vw;
 	margin-left: auto;
 	margin-right: auto;
-	margin-right: -0.35em; /* your centering fix – keep mild */
+	margin-right: -0.35em; 
 
 	@media (max-width: 480px) {
 		font-size: 3rem !important;
