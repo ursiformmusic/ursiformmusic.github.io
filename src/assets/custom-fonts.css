@@ -1,0 +1,44 @@
+/* src/assets/custom-fonts.css */
+
+/* Example for a font called "DictionarySerif" – adjust names/weights */
+@font-face {
+  font-family: 'DictionarySerif';
+  src: url('@/assets/fonts/DictionarySerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;     /* Prevents flash of invisible text (FOIT) */
+}
+
+@font-face {
+  font-family: 'DictionarySerif';
+  src: url('@/assets/fonts/DictionarySerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DictionarySerif';
+  src: url('@/assets/fonts/DictionarySerif-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'QuattrocentoRegular';
+  src: url('@/assets/fonts/Quattrocento-Regular.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SantaGravita';
+  src: url('@/assets/fonts/SantaGravita.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Add more for other weights/styles or a second font family */
