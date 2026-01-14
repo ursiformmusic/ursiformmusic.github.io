@@ -233,4 +233,36 @@ const enterForest = () => {
 		box-shadow: 0 0 24px 12px rgba(var(--v-theme-accent), 0.35);
 	}
 }
+
+/* Quick fix for very small screens (<450px) */
+@media (max-width: 450px) {
+  .title {
+    font-size: 2.4rem !important;          /* readable without zoom */
+    letter-spacing: 0.08em !important;     /* prevent overflow/awkward spacing */
+    line-height: 1 !important;
+    max-width: 90vw !important;
+    padding: 0 0.4rem;                     /* tiny side breathing */
+  }
+
+  .v-col {
+    padding: 0.8rem !important;            /* reduce horizontal squeeze */
+  }
+
+  .enter-btn {
+    width: 100% !important;                /* full width for easy tap */
+    padding: 1rem 2rem !important;
+    min-width: auto !important;
+    font-size: 1rem !important;
+  }
+
+  .v-img.logo-fade {
+    max-width: 70px !important;            /* smaller logo on tiny screens */
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Reduce vertical crowding if needed */
+  .mb-6, .mb-10, .mb-12 {
+    margin-bottom: 1.5rem !important;
+  }
+}
 </style>

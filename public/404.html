@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/" />
     <script>
-      // preserve the path for Vue Router
-      sessionStorage.redirect = location.pathname
+      sessionStorage.redirect = location.pathname + location.search + location.hash
+      window.location.replace('/')
     </script>
   </head>
   <body></body>
