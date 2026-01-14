@@ -15,7 +15,7 @@
             URSIFORM
           </h1> -->
 
-          <!-- Reuse your DefinitionCard here for continuity -->
+
           <div class="mb-12">
             <DefinitionCard />
           </div>
@@ -39,7 +39,7 @@
                 scrolling="no"
                 frameborder="no"
                 allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/YOUR_TRACK_ID&color=%2326a69a&auto_play=false&hide_related=false"
+                src="urlToSoundcloudStuffs"
               ></iframe>
             </v-card-text>
           </v-card> -->

@@ -15,7 +15,7 @@
 					lg="6"
 					class="text-center px-6 py-12"
 				>
-					<!-- Logo (if you have one; fallback to text) -->
+			
 					<v-img
 						
 						:src="bearPawLogo"
@@ -69,7 +69,7 @@ const router = useRouter()
 const enterForest = () => {
   // Optional: small delay for button pulse/click feel
   setTimeout(() => {
-    router.push('/forest')  // ← Change to your target route (e.g. /home, /music, /listen)
+    router.push('/forest')  // ← Change to target route (e.g. /home, /music, /listen)
     // Or named route: router.push({ name: 'Forest' })
   }, 300) // 300ms feels nice with the pulse animation
 }
