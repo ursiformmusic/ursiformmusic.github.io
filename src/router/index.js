@@ -19,4 +19,10 @@ const router = createRouter({
   routes
 })
 
+const redirectPath = sessionStorage.redirect
+if (redirectPath) {
+  sessionStorage.removeItem('redirect')
+  router.replace(redirectPath)
+}
+
 export default router
