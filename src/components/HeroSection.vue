@@ -13,19 +13,19 @@
 					sm="10"
 					md="8"
 					lg="6"
-					class="text-center px-6 py-12"
+					class="text-center px-6 py-12 logo-fade"
 				>
 			
 					<v-img
 						
 						:src="bearPawLogo"
 						max-width="120"
-						class="mx-auto mb-10 logo-fade"
+						class="mx-auto mb-10"
 						contain
 					/>
 
 					<h1
-						class="title text-muted font-weight-black mb-12 logo-fade"
+						class="title text-muted font-weight-black mb-12"
 					>
 						URSIFORM
 					</h1>
@@ -60,7 +60,7 @@
 <script setup>
 defineEmits(["enter"]);
 import DefinitionCard from './DefinitionCard.vue';
-import bearPawLogo from '@/assets/bearPawLogo.png';
+import bearPawLogo from '@/assets/bearPawBigger.png';
 import { useRouter } from 'vue-router';
 
 
@@ -78,12 +78,30 @@ const enterForest = () => {
 
 <style scoped>
 
+.btn-animate {
+  opacity: 0;
+  animation:
+    fadeUp 1.8s ease-out forwards,
+    pulseGlow 3s infinite alternate;
+  animation-delay:
+    1.2s,   /* fadeUp */
+    2.2s;   /* pulseGlow starts after fade */
+}
+
+
+.btn-fade {
+  opacity: 0;
+  animation: fadeUp 1.8s ease-out forwards;
+  animation-delay: 1.2s; /* comes in after logo + title */
+}
+
+
 .hero {
 	height: 100dvh; /* Better mobile handling than 100vh */
 	min-height: -webkit-fill-available;
 	position: relative;
 	overflow: hidden;
-	background-image: url("@/assets/background1.jpg");
+	background-image: url("@/assets/background.jpg");
 	background-size: cover; /* Covers entire area, crops if needed */
 	background-position: center; /* Centers the image */
 	background-repeat: no-repeat;
@@ -265,4 +283,6 @@ const enterForest = () => {
     margin-bottom: 1.5rem !important;
   }
 }
+
+
 </style>
