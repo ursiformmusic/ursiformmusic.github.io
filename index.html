@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URSIFORM Music</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>URSIFORM — West Coast Bass Music</title>
+  <meta
+    name="description"
+    content="URSIFORM, west coast bass music for the forest"
+  />
+  <meta
+    name="keywords"
+    content="URSIFORM, ursiform music, west coast bass, festival bass, electronic music, dusbtep, experimental bass"
+  />
+  <meta name="author" content="URSIFORM" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph (Discord / Google / Facebook) -->
+  <meta property="og:title" content="URSIFORM — West Coast Bass Music" />
+  <meta
+    property="og:description"
+    content="West coast bass music"
+  />
+  <meta
+    property="og:image"
+    content="https://ursiformmusic.com/preview.jpg"
+  />
+  <meta property="og:url" content="https://ursiformmusic.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="URSIFORM — West Coast Bass Music" />
+  <meta
+    name="twitter:description"
+    content="Atmospheric bass music to be played at high volumes in the forest"
+  />
+  <meta
+    name="twitter:image"
+    content="https://ursiformmusic.com/preview.jpg"
+  />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://ursiformmusic.com/" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicGroup",
+      "name": "URSIFORM",
+      "genre": "Electronic / Bass Music",
+      "description": "URSIFORM is a bass music project inspired by the forest.",
+      "url": "https://ursiformmusic.com/",
+      "sameAs": [
+        "https://soundcloud.com/ursiform",
+        "https://instagram.com/ursiformmusic"
+      ],
+      "image": "https://ursiformmusic.com/preview.jpg"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Minimal crawlable fallback -->
+  <noscript>
+    <h1>URSIFORM</h1>
+    <p>
+      URSIFORM is a West Coast bass music project inspired by the forest, ocean,
+      and festival culture.
+    </p>
+  </noscript>
+
+  <div id="app"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
