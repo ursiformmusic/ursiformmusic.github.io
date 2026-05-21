@@ -1,108 +1,113 @@
 <template>
-  <v-card
-    class="definition-card pa-8 pa-sm-10 pa-md-12"
-    elevation="0"
-    rounded="lg"
-  >
-    <div class="text-center mb-6">
-      <div class="word  text-earthy text-md-h3 font-weight-black">
-        ursiform
-      </div>
-      <div class="part-of-speech text-subtitle-1 text-md-subtitle-1 mt-1">
-        adjective
-      </div>
+  <div class="card" :class="{ visible: shown }">
+    <div class="word-row">
+      <span class="word">ursiform</span>
+      <span class="pos">adj.</span>
     </div>
-
-    <div class="pronunciation text-center mb-8 text-body-1 font-italic opacity-70">
-      ur·si·form <span class="phonetic">/ˈɜːr.səˌfɔːrm/</span>
-    </div>
-
-    <v-divider class="my-6 opacity-30"></v-divider>
-
-    <div class="definitions">
-      <div class="definition-item mb-6">
-        <div class="bullet">•</div>
-        <div class="definition-text">
-          having the shape of a bear
-        </div>
-      </div>
-
-      <div class="definition-item">
-        <div class="bullet">•</div>
-        <div class="definition-text">
-          unbothered chonky organic bass music
-        </div>
-      </div>
-    </div>
-  </v-card>
+    <div class="pronunciation">/ˈɜːr.səˌfɔːrm/</div>
+    <div class="divider" />
+    <ul class="defs">
+      <li>having the shape of a bear</li>
+      <li>unbothered chonky organic bass music</li>
+    </ul>
+  </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 
+const shown = ref(false)
+onMounted(() => setTimeout(() => { shown.value = true }, 500))
 </script>
 
 <style scoped>
-.definition-card {
-  background-color: rgba(20, 25, 40, 0);     
-  color: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(4px);            
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.card {
+  max-width: 480px;
+  width: 100%;
+  padding: 2.4rem 2.8rem;
+  background: rgba(7, 12, 26, 0.82);
+  border: 1px solid rgba(68, 102, 158, 0.16);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.95s ease, transform 0.95s ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.word-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
 .word {
   font-family: 'QuattrocentoRegular', serif;
-  letter-spacing: -0.02em;
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 5.5vw, 2.7rem);
+  color: #c4d5e8;
+  letter-spacing: -0.01em;
+  line-height: 1;
 }
 
-.part-of-speech {
-    font-family: 'QuattrocentoRegular', serif;
-
-  text-transform: lowercase;
-  /* font-variant: small-caps; */
+.pos {
+  font-family: 'QuattrocentoRegular', serif;
+  font-size: 0.82rem;
+  color: rgba(130, 168, 215, 0.45);
+  letter-spacing: 0.1em;
 }
 
 .pronunciation {
-  color: rgba(255, 255, 255, 0.65);
+  font-family: 'QuattrocentoRegular', serif;
+  font-size: 0.88rem;
+  color: #5e8fb8;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
-.phonetic {
-  color: #81e6d9;                      
-  font-weight: 300;
+/* Divider bleeds warm brown into cold — the subtle earthy accent */
+.divider {
+  height: 1px;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(68, 102, 158, 0.30) 0%,
+    rgba(110, 62, 22, 0.22) 55%,
+    transparent 100%
+  );
 }
 
-.definitions {
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.definition-item {
+.defs {
+  list-style: none;
   display: flex;
-  gap: 1rem;
-  align-items: baseline;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.bullet {
-  color: #4ecdc4;                       
-  font-size: 1.8rem;
-  line-height: 1;
-  font-weight: bold;
-  flex-shrink: 0;
+.defs li {
+  font-family: 'QuattrocentoRegular', serif;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: rgba(178, 206, 232, 0.78);
+  padding-left: 1.15rem;
+  position: relative;
 }
 
-.definition-text {
-  font-size: 1.125rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.9);
+/* Brown bullet — the only place warm brown appears as a visible element */
+.defs li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: rgba(130, 68, 22, 0.65);
+  font-size: 1.5rem;
+  line-height: 1.1;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .definition-card {
-    padding: 2rem 1.5rem !important;
-  }
-  .word {
-    font-size: 2.75rem !important;
-  }
+@media (max-width: 480px) {
+  .card { padding: 1.8rem 1.6rem; }
 }
 </style>

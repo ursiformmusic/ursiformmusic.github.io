@@ -1,22 +1,18 @@
-// src/router/router.js
 import { createRouter, createWebHistory } from 'vue-router'
+import LandingView from '@/views/LandingView.vue'
+import MusicView   from '@/views/MusicView.vue'
+import ContactView from '@/views/ContactView.vue'
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/LandingView.vue')  // MUST match exact file location
-  },
-  {
-    path: '/forest',
-    name: 'Forest',
-    component: () => import('@/views/ForestView.vue')  // create this file!
-  }
+  { path: '/',        name: 'Home',    component: LandingView },
+  { path: '/forest',  redirect: '/' },
+  { path: '/music',   name: 'Music',   component: MusicView   },
+  { path: '/contact', name: 'Contact', component: ContactView },
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 
 const redirectPath = sessionStorage.redirect

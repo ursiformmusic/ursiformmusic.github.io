@@ -79,6 +79,14 @@
     </p>
   </noscript>
 
+  <!-- Splash cover: hides the unstyled flash on first load. Faded out by main.js after mount. -->
+  <div id="splash" style="
+    position:fixed;inset:0;z-index:99999;
+    background:#070b14;
+    transition:opacity 0.55s ease;
+    pointer-events:none;
+  "></div>
+
   <div id="app"></div>
 
   <script type="module" src="/src/main.js"></script>

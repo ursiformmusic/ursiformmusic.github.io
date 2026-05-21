@@ -1,29 +1,29 @@
 <template>
-  <v-app>
-    <DefaultLayout>
-      <transition name="page-fade" mode="out-in">
-        <router-view />
-      </transition>
-    </DefaultLayout>
-  </v-app>
+  <transition name="page-fade" mode="out-in">
+    <router-view :key="$route.path" />
+  </transition>
 </template>
 
-<script setup>
-import DefaultLayout from './layouts/DefaultLayout.vue'
-</script>
-
 <style>
-
-
-/* Global Transition shift up, looks decent I guess? */
-.page-fade-enter-active,
-.page-fade-leave-active {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);  
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html, body, #app {
+  height: 100%;
+}
+
+body {
+  background: #070b14;
+  color: #c4d5e8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-fade-enter-active { transition: opacity 0.35s ease; }
+.page-fade-leave-active { transition: opacity 0.22s ease; }
 .page-fade-enter-from,
-.page-fade-leave-to {
-  opacity: 0;
-  transform: translateY(40px); 
-}
+.page-fade-leave-to     { opacity: 0; }
 </style>
