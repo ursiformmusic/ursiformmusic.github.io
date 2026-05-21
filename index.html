@@ -67,8 +67,8 @@
       "image": "https://ursiformmusic.com/preview.jpg"
     }
   </script>
-  <script type="module" crossorigin src="/assets/index-DW03dTco.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-C_hUvK6r.css">
+  <script type="module" crossorigin src="/assets/index-0eMIieUK.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-ylP4Lpd_.css">
 </head>
 
 <body>
@@ -81,7 +81,15 @@
     </p>
   </noscript>
 
-  <div id="app"></div>
+  <!-- Splash cover: hides the unstyled flash on first load. Faded out by main.js after mount. -->
+  <div id="splash" style="
+    position:fixed;inset:0;z-index:99999;
+    background:#070b14;
+    transition:opacity 0.55s ease;
+    pointer-events:none;
+  "></div>
 
+  <div id="app"></div>
+
 </body>
 </html>
