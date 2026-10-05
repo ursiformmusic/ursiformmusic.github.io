@@ -6,6 +6,7 @@
     <div class="desktop-links">
       <router-link to="/music"   class="nav-link">music</router-link>
       <router-link to="/contact" class="nav-link">contact</router-link>
+      <a href="/twilight-reverb/" class="nav-link">plugins</a>
       <span class="nav-link dim">merch</span>
     </div>
 
@@ -25,7 +26,8 @@
         <div class="veil-inner">
           <router-link to="/music"   class="veil-link" style="--i:0" @click="close">music</router-link>
           <router-link to="/contact" class="veil-link" style="--i:1" @click="close">contact</router-link>
-          <span                      class="veil-link dim" style="--i:2">merch</span>
+          <a href="/twilight-reverb/" class="veil-link" style="--i:2" @click="close">plugins</a>
+          <span                      class="veil-link dim" style="--i:3">merch</span>
         </div>
       </div>
     </Transition>
