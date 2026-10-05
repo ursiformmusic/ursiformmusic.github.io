@@ -4,6 +4,7 @@
 
     <!-- Desktop links (hidden on mobile) -->
     <div class="desktop-links">
+      <router-link to="/"        class="nav-link">home</router-link>
       <router-link to="/music"   class="nav-link">music</router-link>
       <router-link to="/contact" class="nav-link">contact</router-link>
       <a href="/twilight-reverb/" class="nav-link">plugins</a>
@@ -24,10 +25,11 @@
     <Transition name="veil">
       <div v-if="isOpen" class="veil" @click.self="close">
         <div class="veil-inner">
-          <router-link to="/music"   class="veil-link" style="--i:0" @click="close">music</router-link>
-          <router-link to="/contact" class="veil-link" style="--i:1" @click="close">contact</router-link>
-          <a href="/twilight-reverb/" class="veil-link" style="--i:2" @click="close">plugins</a>
-          <span                      class="veil-link dim" style="--i:3">merch</span>
+          <router-link to="/"        class="veil-link" style="--i:0" @click="close">home</router-link>
+          <router-link to="/music"   class="veil-link" style="--i:1" @click="close">music</router-link>
+          <router-link to="/contact" class="veil-link" style="--i:2" @click="close">contact</router-link>
+          <a href="/twilight-reverb/" class="veil-link" style="--i:3" @click="close">plugins</a>
+          <span                      class="veil-link dim" style="--i:4">merch</span>
         </div>
       </div>
     </Transition>
