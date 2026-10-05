@@ -12,15 +12,19 @@ const routes = [
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundView },
 ]
 
+// GitHub Pages serves public/404.html for deep links (e.g. /contact), which
+// stashes the path and bounces to "/". Restore the real URL *before* the
+// router starts, so its initial navigation lands on the intended page
+// instead of racing a separate replace() back to "/".
+const redirectPath = sessionStorage.redirect
+if (redirectPath) {
+  sessionStorage.removeItem('redirect')
+  history.replaceState(null, '', redirectPath)
+}
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
 })
-
-const redirectPath = sessionStorage.redirect
-if (redirectPath) {
-  sessionStorage.removeItem('redirect')
-  router.replace(redirectPath)
-}
 
 export default router
