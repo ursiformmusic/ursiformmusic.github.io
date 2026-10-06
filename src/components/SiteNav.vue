@@ -8,6 +8,7 @@
       <router-link to="/music"   class="nav-link">music</router-link>
       <router-link to="/contact" class="nav-link">contact</router-link>
       <a href="/twilight-reverb/" class="nav-link">plugins</a>
+      <a href="/wav-watcher/"     class="nav-link">wav watcher</a>
       <span class="nav-link dim">merch</span>
     </div>
 
@@ -29,7 +30,8 @@
           <router-link to="/music"   class="veil-link" style="--i:1" @click="close">music</router-link>
           <router-link to="/contact" class="veil-link" style="--i:2" @click="close">contact</router-link>
           <a href="/twilight-reverb/" class="veil-link" style="--i:3" @click="close">plugins</a>
-          <span                      class="veil-link dim" style="--i:4">merch</span>
+          <a href="/wav-watcher/"     class="veil-link" style="--i:4" @click="close">wav watcher</a>
+          <span                      class="veil-link dim" style="--i:5">merch</span>
         </div>
       </div>
     </Transition>
